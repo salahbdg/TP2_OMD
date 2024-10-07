@@ -1,0 +1,43 @@
+@startuml
+class Editeur {
+    - texte : String
+    + selectText() : String
+    + SupprimerText() : void
+    + RemplacerText(text:String) : void
+}
+
+Interface Command {
+    + executeCommand() : void
+}
+
+class Couper {
+    - buffer : String
+    - pressePapier : String
+    + executeCommand() : void
+}
+
+class Copier {
+    - buffer : String
+    - pressePapier : String
+    + executeCommand() : void
+}
+
+class Coller {
+    - buffer : String
+    - pressePapier : String
+    + executeCommand() : void
+}
+
+class Invoker {
+    - command : Command
+    - pressePapier : String
+    + executeCmd(Command cmd) : void
+}
+
+' Relations
+Command <|.. Copier
+Command <|.. Couper
+Command <|.. Coller
+
+
+@enduml
