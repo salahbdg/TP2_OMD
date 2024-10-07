@@ -1,4 +1,4 @@
-**TP2 OMD USING UML**
+# **TP2 OMD USING UML**
 
 This involves building a mini text editor offering the following concepts and functions:
 - The text is contained in a buffer (work area),
