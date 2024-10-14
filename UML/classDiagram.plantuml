@@ -1,43 +1,72 @@
 @startuml
 class Editeur {
     - texte : String
+    - pressePapier : PressePapier
+    - selection : Selection
+
     + selectText() : String
-    + SupprimerText() : void
-    + RemplacerText(text:String) : void
+    + removeText() : void
+    + ReplaceText(text:String) : void
+    + addText(text:String) : void
+    + copier() : void
+    + couper() : void
+    + coller() : void
+}
+
+class PressePapier{
+    - content : String
+    + copier() : void
+    + coller() : void
+}
+
+class Selection {
+    - start : int
+    - end : int
+    + update() : void
 }
 
 Interface Command {
-    + executeCommand() : void
+    + execute() : void
 }
 
 class Couper {
     - buffer : String
-    - pressePapier : String
-    + executeCommand() : void
+    + execute() : void
 }
 
 class Copier {
     - buffer : String
-    - pressePapier : String
-    + executeCommand() : void
+    + execute() : void
 }
 
 class Coller {
     - buffer : String
-    - pressePapier : String
-    + executeCommand() : void
+    + execute() : void
+}
+
+class SelectionCommand {
+    - buffer : String
+    + execute() : void
 }
 
 class Invoker {
     - command : Command
-    - pressePapier : String
-    + executeCmd(Command cmd) : void
+    + executeCommand(Command cmd) : void
 }
 
+
+
 ' Relations
+
+Editeur <-- Command
 Command <|.. Copier
 Command <|.. Couper
 Command <|.. Coller
+Command <|.. SelectionCommand
+
+Editeur <-- PressePapier : "1..1"
+Editeur <-- Selection : "1..1"
+Invoker --> Command : "1..*"
 
 
 @enduml
