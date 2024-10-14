@@ -15,37 +15,42 @@ class Editeur {
 
 class PressePapier{
     - content : String
-    + copier() : void
-    + coller() : void
+    + get() : String
+    + set(String text) : void
 }
 
 class Selection {
     - start : int
     - end : int
-    + update() : void
+    + update(int start, int end) : void
 }
 
 Interface Command {
     + execute() : void
 }
 
+class AddText {
+    - buffer : Editeur
+    + execute() : void
+}
+
 class Couper {
-    - buffer : String
+    - buffer : Editeur
     + execute() : void
 }
 
 class Copier {
-    - buffer : String
+    - buffer : Editeur
     + execute() : void
 }
 
 class Coller {
-    - buffer : String
+    - buffer : diteur
     + execute() : void
 }
 
 class SelectionCommand {
-    - buffer : String
+    - buffer : Editeur
     + execute() : void
 }
 
@@ -63,6 +68,8 @@ Command <|.. Copier
 Command <|.. Couper
 Command <|.. Coller
 Command <|.. SelectionCommand
+Command <|.. AddText
+
 
 Editeur <-- PressePapier : "1..1"
 Editeur <-- Selection : "1..1"
