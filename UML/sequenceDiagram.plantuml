@@ -1,0 +1,30 @@
+@startuml
+actor Client
+
+participant "Invoker" as invoker
+participant "ConcreteCommandCouper" as couper
+participant "Buffer" as buffer
+participant "Sélection" as selection
+participant "Presse-papier" as clipboard
+
+== Ajouter du texte ==
+Client -> buffer : ajouterTexte("nouveau texte")
+buffer -> buffer : texte = "nouveau texte"
+
+== Sélectionner du texte ==
+Client -> selection : modifierDebut(positionDebut)
+Client -> selection : modifierFin(positionFin)
+selection -> buffer : selectText()
+buffer -> selection : "texte sélectionné"
+
+== Couper du texte ==
+Client -> invoker : executeCommand(couper)
+invoker -> couper : execute()
+
+couper -> buffer : selectText()
+buffer -> selection : "texte sélectionné"
+couper -> clipboard : copier("texte sélectionné")
+
+couper -> buffer : supprimerSelection()
+buffer -> buffer : texte = texte - "texte sélectionné"
+@enduml
