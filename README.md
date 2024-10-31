@@ -7,3 +7,13 @@ This involves building a mini text editor offering the following concepts and fu
 - Copy the selection to the clipboard then delete the selection,
 - Replace ("paste") the selection with the contents of the clipboard,
 - The human-machine interface is of any type (textual or graphical).
+
+
+# How to use the mini text editor   
+
+- To copy we use : `ctrl+shift+C`
+- To cut we use : `ctrl+shift+X`
+- To paste we use : `ctrl+shift+V`
+- To undo : `ctrl+shift+Z`
+- To redo : `ctrl+shift+Y`
+
