@@ -1,0 +1,110 @@
+@startuml
+class Editeur {
+    - texte : String
+    - pressePapier : PressePapier
+    - selection : Selection
+
+    + selectText() : String
+    + removeText() : void
+    + ReplaceText(text:String) : void
+    + addText(text:String) : void
+    + copier() : void
+    + couper() : void
+    + coller() : void
+}
+
+Interface Command {
+    + execute() : void
+}
+class PressePapier {
+    - content : String
+    + get() : String
+    + set(String text) : void
+}
+
+class Selection {
+    - start : int
+    - end : int
+    + update(int start, int end) : void
+}
+
+
+
+class AddText implements Command{
+    - buffer : Editeur
+    + execute() : void
+}
+
+class Couper implements Command{
+    - buffer : Editeur
+    + execute() : void
+}
+
+class Copier implements Command{
+    - buffer : Editeur
+    + execute() : void
+}
+
+class Coller implements Command {
+    - buffer : Editeur
+    + execute() : void
+}
+
+class Selectionner implements Command{
+    - buffer : Editeur
+    + execute() : void
+}
+class Defaire implements Command {
+    - editeur : Editeur
+    + execute() : void
+}
+
+class Refaire implements Command {
+    - editeur : Editeur
+    + execute() : void
+}
+
+class Memento {
+    - texte : String
+    - start : int
+    - end : int
+
+    + getTexte() : String
+    + getStart() : int
+    + getEnd() : int
+}
+
+class Historique {
+    - commandes : List<Command>
+    - etats : List<Memento>
+    - currentIndex : int
+
+    + ajouterCommande(commande : Command, etat : Memento) : void
+    + defaire() : Memento
+    + refaire() : Memento
+}
+
+
+class InterfaceGraphique {
+    - editeur : Editeur
+
+    + copierAction() : void
+    + couperAction() : void
+    + collerAction() : void
+    + addTextAction(text : String) : void
+    + selectionnerAction(start : int, end : int) : void
+}
+
+' Relations
+ 
+Editeur <-- Command :"1..1"
+
+
+Editeur <-- PressePapier : "1..1"
+Editeur <-- Selection : "1..1"
+InterfaceGraphique --> Editeur : "1..1"
+Editeur --> Historique : "1..1"
+Historique --> Memento : "1..*"
+Historique o-- Command : "1..*"
+
+@enduml
