@@ -1,0 +1,80 @@
+@startuml
+class Editeur {
+    - texte : String
+    - pressePapier : PressePapier
+    - selection : Selection
+
+    + selectText() : String
+    + removeText() : void
+    + replaceText(text:String) : void
+    + addText(text:String) : void
+}
+
+class PressePapier {
+    - content : String
+    + get() : String
+    + set(String text) : void
+}
+
+class Selection {
+    - start : int
+    - end : int
+    + update(int start, int end) : void
+    + getStart() : int
+    + getEnd() : int
+}
+
+Interface Command {
+    + execute() : void
+}
+
+class AddText implements Command {
+    - editeur : Editeur
+    - text : String
+    + execute() : void
+}
+
+class Couper implements Command {
+    - editeur : Editeur
+    + execute() : void
+}
+
+class Copier implements Command {
+    - editeur : Editeur
+    + execute() : void
+}
+
+class Coller implements Command {
+    - editeur : Editeur
+    + execute() : void
+}
+
+class Selectionner implements Command {
+    - editeur : Editeur
+    - start : int
+    - end : int
+    + execute() : void
+}
+
+class InterfaceGraphique {
+    - editeur : Editeur
+
+    + copierAction() : void
+    + couperAction() : void
+    + collerAction() : void
+    + addTextAction(text : String) : void
+    + selectionnerAction(start : int, end : int) : void
+}
+
+' Relations
+Editeur <-- PressePapier : "1..1"
+Editeur <-- Selection : "1..1"
+InterfaceGraphique --> Editeur : "1..1"
+Command --> Editeur : "1..1"
+
+Command <|.. Copier
+Command <|.. Couper
+Command <|.. Coller
+Command <|.. Selectionner
+Command <|.. AddText
+@enduml
