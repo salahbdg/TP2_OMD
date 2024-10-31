@@ -67,7 +67,8 @@ public class InterfaceGraphique {
             @Override
             public void actionPerformed(ActionEvent e) {
                 editeur.setTexte(textArea.getText());  // Synchronise le texte de JTextArea vers Editeur
-                editeur.getSelection().update(textArea.getCaretPosition(), textArea.getCaretPosition());
+                //editeur.getSelection().update(textArea.getCaretPosition(), textArea.getCaretPosition());
+                editeur.getSelection().update(textArea.getSelectionStart(), textArea.getSelectionEnd());
                 editeur.coller();
                 textArea.setText(editeur.getTexte());  // Mise à jour de JTextArea après coller
             }
