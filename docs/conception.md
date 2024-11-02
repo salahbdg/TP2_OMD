@@ -26,3 +26,12 @@
 This diagram shows the sequence of actions for a `Coller` command, illustrating the interaction between `InterfaceGraphique`, `Editeur`, and `PressePapier`.
 
 
+### Version 2: Recording Actions and Undo/Redo   
+
+### UML Class Model (V2)
+
+![image](https://github.com/user-attachments/assets/8580c053-8e86-4978-933c-4ca632a80b1b)
+
+
+
+
