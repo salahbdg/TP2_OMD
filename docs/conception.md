@@ -30,7 +30,20 @@ This diagram shows the sequence of actions for a `Coller` command, illustrating 
 
 ### UML Class Model (V2)
 
-![image](https://github.com/user-attachments/assets/8580c053-8e86-4978-933c-4ca632a80b1b)
+![image](https://github.com/user-attachments/assets/8580c053-8e86-4978-933c-4ca632a80b1b)    
+
+### Explanations    
+- `Memento` : Stores editor state for undo/redo functionality.
+- `Historique` : Handles saving and retrieving states for undo/redo.
+- `Defaire` et `Refaire` : Commands to navigate the editing history.
+- `InterfaceGraphique` : Updated to handle `CTRL+shift+Z` (undo) and `CTRL+shift+Y` (redo) shortcuts.
+
+
+### UML Sequence Model (V2)   
+![image](https://github.com/user-attachments/assets/dc51e06b-ce5a-434f-91d9-58eedfe3cb70)    
+
+This diagram shows the sequence of actions for the `Defaire` command, including saving state to `Memento` and restoring state via `Historique`.
+
 
 
 
