@@ -2,7 +2,7 @@
 
 ## Version 1: Basic editing functions    
 
-### UML Use Case    
+### UML Use Case (V1)    
 
 ![image](https://github.com/user-attachments/assets/fcfd6cad-992f-4101-b83f-03663cb11242)
 
@@ -26,7 +26,13 @@
 This diagram shows the sequence of actions for a `Coller` command, illustrating the interaction between `InterfaceGraphique`, `Editeur`, and `PressePapier`.
 
 
-### Version 2: Recording Actions and Undo/Redo   
+### Version 2: Recording Actions and Undo/Redo
+
+
+### UML Use Case (V2)    
+
+![image](https://github.com/user-attachments/assets/2dd3b5d7-ad72-4598-b257-8254757c7311)
+
 
 ### UML Class Model (V2)
 
