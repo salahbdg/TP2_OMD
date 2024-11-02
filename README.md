@@ -1,4 +1,4 @@
-# Mni Text Editor
+# Mini Text Editor
 
 This project is a mini-text editor implemented in Java, produced in pairs as part of the OMD practical course. The project is organized in two successive versions: V1 and V2.
 
