@@ -7,7 +7,9 @@ This project is a mini-text editor implemented in Java, produced in pairs as par
 - Copy, Cut, Paste text 
 - Adding text to the text box
 - Text selection
-(implemented with the Memento design pattern)
+
+
+(implemented with the Command design pattern)
 
 
 
