@@ -1,6 +1,7 @@
 # Developer file   
 
-## Workspace for the version 1   
+## Workspace for the version 1 
+### Files Structure    
 - `Editeur.java` : Contains the main editing logic.
 - `PressePapier.java` : Managing copied text.
 - `Selection.java` : Management of selection positions in the text.
