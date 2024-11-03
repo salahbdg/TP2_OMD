@@ -26,7 +26,7 @@
 
     
 
-This diagram shows the sequence of actions for a `Coller` command, illustrating the interaction between `InterfaceGraphique`, `Editeur`, and `PressePapier`.
+This diagram shows the sequence of actions for a `Couper`,`Selectionner` command and `addText` function , illustrating the interaction between `InterfaceGraphique`, `Editeur`, and `PressePapier`.
 
 
 ### Version 2: Recording Actions and Undo/Redo
