@@ -21,7 +21,7 @@ public class InterfaceGraphique {
         textArea.getActionMap().put("Copier", new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                editeur.setTexte(textArea.getText());  // Synchronise le texte de JTextArea vers Editeur
+                editeur.setTexte(textArea.getText());  // Pour synchroniser le texte de JTextArea avec notre mini Editeur
                 editeur.getSelection().update(textArea.getSelectionStart(), textArea.getSelectionEnd());
                 editeur.copier();
             }
@@ -35,7 +35,7 @@ public class InterfaceGraphique {
                 editeur.setTexte(textArea.getText());
                 editeur.getSelection().update(textArea.getSelectionStart(), textArea.getSelectionEnd());
                 editeur.couper();
-                textArea.setText(editeur.getTexte());
+                textArea.setText(editeur.getTexte());// Màj du texte apres la commande
             }
         });
 
