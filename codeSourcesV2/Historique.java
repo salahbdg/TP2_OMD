@@ -7,7 +7,6 @@ public class Historique {
     private int currInd = -1;
 
     public void ajouterCommande(Command com, Memento state) {
-        // Supprimer les actions futures en cas de nouvelle commande
         while (coms.size() > currInd + 1) {
             coms.remove(coms.size() - 1);
             states.remove(states.size() - 1);
