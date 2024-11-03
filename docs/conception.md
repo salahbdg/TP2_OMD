@@ -21,7 +21,8 @@
 
 ### UML Sequence Model (V1)  
 
-![image](https://github.com/user-attachments/assets/f19c6ed7-6239-43c0-9e79-077b16f2a63d)    
+![image](https://github.com/user-attachments/assets/3695ff81-547c-40a8-bd3f-dc899af0d309)
+    
 
 This diagram shows the sequence of actions for a `Coller` command, illustrating the interaction between `InterfaceGraphique`, `Editeur`, and `PressePapier`.
 
