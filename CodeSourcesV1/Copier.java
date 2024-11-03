@@ -7,7 +7,7 @@ public class Copier implements Command {
 
     @Override
     public void execute() {
-        String selection = buffer.selectText();
-        buffer.getClipBoard().set(selection);
+        String selec = buffer.selectText();
+        buffer.getClipBoard().set(selec);
     }
 }
