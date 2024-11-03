@@ -21,7 +21,8 @@
 
 ### UML Sequence Model (V1)  
 
-![image](https://github.com/user-attachments/assets/461ced79-532d-4461-b191-8a5d8c340f83)
+![image](https://github.com/user-attachments/assets/511a4dc8-7e0d-4441-83f3-4a05a2cb132d)
+
 
     
 
